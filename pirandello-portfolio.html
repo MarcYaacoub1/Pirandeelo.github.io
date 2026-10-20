@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#7f0a10">
+<title>بورتفوليو استوديو بيراندلو | Pirandello Studio Portfolio</title>
+<link rel="icon" href="images/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,500;0,700;1,500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --red:#7f0a10; --velvet:#5a0709; --wine:#2e0507; --bright:#a3131b;
+  --gold:#c9a24a; --gold-soft:#e4cd8f; --ivory:#f3e9d7;
+  --display:'Aref Ruqaa','Cormorant Garamond',serif;
+  --body:'IBM Plex Sans Arabic',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--wine);color:var(--ivory);font-family:var(--body);font-weight:300;line-height:1.9;overflow-x:hidden}
+html[lang=en] body{font-family:'Cormorant Garamond',var(--body);font-size:1.12rem;line-height:1.7}
+html[lang=en] h1,html[lang=en] h2,html[lang=en] h3,html[lang=en] .brand{font-family:'Cormorant Garamond',serif}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+/* bilingual switch */
+html[lang=ar] [data-l=en],html[lang=en] [data-l=ar]{display:none!important}
+
+/* Header */
+header{position:fixed;inset:0 0 auto 0;z-index:50;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:14px clamp(16px,4vw,48px);background:linear-gradient(var(--wine),rgba(46,5,7,0));backdrop-filter:blur(6px)}
+.brand{font-family:var(--display);font-size:1.3rem;color:var(--gold-soft);white-space:nowrap}
+nav{display:flex;gap:clamp(12px,2vw,28px);font-size:.95rem}
+nav a{position:relative;padding:4px 0;opacity:.88}
+nav a::after{content:"";position:absolute;inset:auto 0 0 0;height:1px;background:var(--gold);transform:scaleX(0);transition:transform .35s}
+nav a:hover::after{transform:scaleX(1)}
+.tools{display:flex;gap:10px;align-items:center}
+.pill{border:1px solid var(--gold);color:var(--gold-soft);background:none;font:inherit;font-size:.88rem;padding:6px 16px;border-radius:999px;cursor:pointer;transition:background .3s,color .3s;white-space:nowrap}
+.pill:hover{background:var(--gold);color:var(--wine)}
+@media(max-width:900px){nav{display:none}}
+
+/* Hero + curtain */
+.hero{position:relative;min-height:100vh;display:grid;place-items:center;text-align:center;padding:120px 24px 80px;overflow:hidden;
+  background:radial-gradient(ellipse at 50% 30%,var(--bright) 0%,var(--red) 38%,var(--wine) 100%)}
+.spot{position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle 260px at var(--x,50%) var(--y,40%),rgba(228,205,143,.24),transparent 70%)}
+.hero h1{font-family:var(--display);font-weight:700;font-size:clamp(2.6rem,9vw,6.2rem);line-height:1.25;text-shadow:0 4px 40px rgba(0,0,0,.45)}
+.hero .sub{display:block;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:500;font-size:clamp(1.1rem,3vw,1.8rem);color:var(--gold-soft);letter-spacing:.1em;margin-top:6px}
+.hero p{max-width:34em;margin:26px auto 0;font-size:1.1rem;opacity:.92}
+.cue{position:absolute;bottom:26px;inset-inline:0;margin:auto;width:1px;height:56px;background:linear-gradient(var(--gold),transparent);animation:cue 2s infinite}
+@keyframes cue{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+.curtain{position:fixed;inset:0;z-index:100;pointer-events:none;display:flex;direction:ltr}
+.curtain i{flex:1;background:repeating-linear-gradient(90deg,rgba(0,0,0,.28) 0 14px,transparent 14px 40px,rgba(255,255,255,.07) 40px 52px,transparent 52px 80px),linear-gradient(var(--bright),var(--velvet));transition:transform 2.2s cubic-bezier(.77,0,.18,1) .5s;border-block-end:6px solid var(--gold)}
+body.open .curtain i:first-child{transform:translateX(-101%)}
+body.open .curtain i:last-child{transform:translateX(101%)}
+body.open .curtain{visibility:hidden;transition:visibility 0s 3s}
+
+/* Sections */
+section{padding:clamp(72px,12vw,130px) clamp(20px,6vw,80px)}
+.wrap{max-width:1040px;margin:auto}
+h2{font-family:var(--display);font-weight:700;font-size:clamp(2rem,5vw,3.3rem);color:var(--gold-soft);margin-bottom:28px;line-height:1.3}
+.about p{font-size:1.15rem;max-width:40em;margin-bottom:1.1em}
+.vision{background:var(--ivory);color:var(--wine);text-align:center}
+.vision h2{color:var(--red)}
+.vision blockquote{font-family:var(--display);font-size:clamp(1.5rem,3.6vw,2.4rem);line-height:2;max-width:26em;margin:auto}
+html[lang=en] .vision blockquote{font-family:'Cormorant Garamond',serif;font-style:italic;line-height:1.5;font-size:clamp(1.6rem,3.6vw,2.4rem)}
+.ornament{display:block;width:90px;height:1px;background:var(--red);margin:0 auto 30px;position:relative}
+.ornament::after{content:"";position:absolute;inset:-4px 0 0;margin:auto;width:9px;height:9px;background:var(--gold);transform:rotate(45deg)}
+.mission ul{list-style:none;max-width:760px}
+.mission li{display:flex;gap:20px;align-items:baseline;padding:22px 0;border-bottom:1px solid rgba(201,162,74,.28);font-size:1.2rem;transition:padding .35s,color .35s}
+.mission li::before{content:"";flex:none;width:9px;height:9px;background:var(--gold);transform:rotate(45deg)}
+.mission li:hover{padding-inline-start:18px;color:var(--gold-soft)}
+.achievements{background:linear-gradient(var(--wine),var(--velvet))}
+.lead{font-size:1.1rem;margin-bottom:44px;opacity:.9}
+.timeline{margin-bottom:60px;padding-inline-start:36px;border-inline-start:2px solid var(--gold)}
+.ev{position:relative;padding-bottom:34px}
+.ev::before{content:"";position:absolute;inset-inline-start:-45px;top:14px;width:14px;height:14px;background:var(--gold);transform:rotate(45deg)}
+.yr{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:2.8rem;color:var(--gold);line-height:1}
+.ev h3{font-family:var(--display);font-size:1.5rem;font-weight:400}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+.grid>div{padding:28px 24px;border:1px solid rgba(201,162,74,.35);background:rgba(0,0,0,.18);transition:transform .3s,border-color .3s,background .3s}
+.grid>div:hover{transform:translateY(-6px);border-color:var(--gold);background:rgba(201,162,74,.08)}
+
+/* Photo galleries (placeholders until real photos arrive) */
+.gallery{background:var(--wine)}
+.gallery.alt{background:var(--velvet)}
+.photos{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:18px}
+.photos.cert{grid-template-columns:repeat(auto-fill,minmax(220px,1fr))}
+.ph{aspect-ratio:4/3;display:grid;place-items:center;text-align:center;border:1px dashed rgba(201,162,74,.5);background:rgba(0,0,0,.2);color:var(--gold-soft);font-size:.95rem;overflow:hidden;transition:border-color .3s,transform .3s}
+.cert .ph{aspect-ratio:3/4}
+.ph:hover{border-color:var(--gold);transform:translateY(-4px)}
+.ph img{width:100%;height:100%;object-fit:cover;display:block}
+
+
+.brand img{height:42px;width:auto;display:block}
+.hero-logo{width:min(440px,72vw);height:auto;display:block;margin:0 auto 18px;filter:drop-shadow(0 6px 30px rgba(0,0,0,.4))}
+.hero h1{font-size:clamp(2rem,6vw,4rem)}
+.vision{background:radial-gradient(ellipse at 50% 0%,#f3e6c8,#e6d3a8);color:var(--red)}
+.vision blockquote{color:var(--velvet)}
+.vision .ornament{background:var(--red)}
+.shows{grid-template-columns:repeat(3,1fr);grid-auto-flow:dense}
+.pic{position:relative;aspect-ratio:4/3;overflow:hidden;cursor:zoom-in;border:1px solid rgba(201,162,74,.35);background:var(--wine)}
+.pic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .9s}
+.pic:hover img{transform:scale(1.06)}
+.pic.big{grid-column:span 2;grid-row:span 2;aspect-ratio:auto}
+.awardpics{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:56px}
+.awardpics .pic{aspect-ratio:3/2}
+.sub-h{font-family:var(--display);font-size:1.6rem;color:var(--gold-soft);margin-bottom:20px}
+#lb{position:fixed;inset:0;z-index:200;background:rgba(20,2,3,.92);display:none;place-items:center;padding:20px;cursor:zoom-out}
+#lb.on{display:grid}#lb img{max-width:100%;max-height:92vh;box-shadow:0 10px 60px #000}
+@media(max-width:700px){.shows{grid-template-columns:1fr 1fr}.pic.big{grid-row:auto;aspect-ratio:4/3}.awardpics{grid-template-columns:1fr}}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .9s,transform .9s}
+.reveal.in{opacity:1;transform:none}
+footer{text-align:center;padding:40px 20px;background:var(--wine);border-top:1px solid rgba(201,162,74,.3);font-size:.92rem}
+footer a{color:var(--gold-soft);border-bottom:1px solid var(--gold)}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}.curtain{display:none}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="curtain" aria-hidden="true"><i></i><i></i></div>
+
+<header>
+  <a class="brand" href="#top" aria-label="Pirandello Studio"><img src="images/logo.png" alt="Pirandello Studio"></a>
+  <nav>
+    <a href="#about"><span data-l="ar">من نحن</span><span data-l="en">About</span></a>
+    <a href="#vision"><span data-l="ar">رؤيتنا</span><span data-l="en">Vision</span></a>
+    <a href="#mission"><span data-l="ar">رسالتنا</span><span data-l="en">Mission</span></a>
+    <a href="#achievements"><span data-l="ar">إنجازاتنا</span><span data-l="en">Achievements</span></a>
+    <a href="#shows"><span data-l="ar">العروض</span><span data-l="en">Shows</span></a>
+    <a href="#awards"><span data-l="ar">الشهادات</span><span data-l="en">Awards</span></a>
+  </nav>
+  <div class="tools">
+    <button class="pill" id="lang" type="button">EN</button>
+    <!-- زرار الرجوع للموقع الرئيسي -->
+    <a class="pill" href="https://pirandeelo.vercel.app/"><span data-l="ar">الموقع الرئيسي</span><span data-l="en">Main site</span></a>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="spot" id="spot"></div>
+    <div>
+      <img class="hero-logo" src="images/logo.png" alt="Pirandello Studio">
+      <h1><span data-l="ar">استوديو بيراندلو للمسرح</span><span data-l="en">Pirandello Theatre Studio</span>
+        <span class="sub"><span data-l="ar">Pirandello Theatre Studio</span><span data-l="en">Alexandria · Since 2022</span></span></h1>
+      <p><span data-l="ar">مبادرة مسرحية مستقلة من الإسكندرية، تدعم الفنانين الشباب وتفتح مساحة حقيقية للإبداع والتجريب.</span><span data-l="en">An independent theatre initiative in Alexandria, supporting young artists and giving them real space to create and experiment.</span></p>
+    </div>
+    <span class="cue" aria-hidden="true"></span>
+  </div>
+
+  <section class="about" id="about"><div class="wrap reveal">
+    <h2><span data-l="ar">من نحن</span><span data-l="en">About us</span></h2>
+    <p data-l="ar">تأسس استوديو بيراندلو للمسرح (Pirandello Theatre Studio) بمدينة الإسكندرية عام 2022، كمبادرة مسرحية مستقلة تهدف إلى دعم الفنانين الشباب، وتوفير مساحة حقيقية للإبداع والتجريب المسرحي.</p>
+    <p data-l="ar">منذ اليوم الأول، كان هدفنا خلق بيئة فنية تسمح للمواهب الجديدة بالتعلم والإنتاج وتقديم تجارب مسرحية مختلفة، بعيدًا عن الأشكال التقليدية، مع إيمان بأن المسرح وسيلة للتعليم والحوار والتغيير.</p>
+    <p data-l="ar">خلال فترة قصيرة، أصبح الاستوديو جزءًا من الحركة المسرحية المستقلة في الإسكندرية، من خلال إنتاج العروض وتنظيم الفعاليات والمشاركة في مهرجانات وأنشطة مسرحية كثيرة.</p>
+    <p data-l="en">Pirandello Theatre Studio was founded in Alexandria in 2022 as an independent theatre initiative. It exists to support young artists and to give them real space for creativity and theatrical experimentation.</p>
+    <p data-l="en">From day one, the aim has been an artistic environment where new talent can learn, produce and present different kinds of theatre, away from traditional forms, in the belief that theatre is a tool for education, dialogue and change.</p>
+    <p data-l="en">In a short time, the studio has become part of Alexandria's independent theatre scene, producing shows, organizing events and taking part in many festivals and theatre activities.</p>
+  </div></section>
+
+  <section class="vision" id="vision"><div class="wrap reveal">
+    <span class="ornament"></span>
+    <h2><span data-l="ar">رؤيتنا</span><span data-l="en">Our vision</span></h2>
+    <blockquote data-l="ar">أن يصبح مهرجان بيراندلو للمسرح (Pirandello Theatre Festival) منصة مسرحية سنوية رائدة، تنطلق من الإسكندرية وتتحول تدريجيًا إلى مهرجان عربي ثم دولي، يجمع بين الإبداع المسرحي المصري والتجارب المسرحية العالمية، ويجعل من المسرح مساحة للحوار الثقافي الحقيقي.</blockquote>
+    <blockquote data-l="en">For the Pirandello Theatre Festival to become a leading annual theatre platform. Starting in Alexandria, growing into an Arab and then an international festival, bringing Egyptian theatre together with world theatre, and making the stage a place for real cultural dialogue.</blockquote>
+  </div></section>
+
+  <section class="mission" id="mission"><div class="wrap reveal">
+    <h2><span data-l="ar">رسالتنا</span><span data-l="en">Our mission</span></h2>
+    <ul>
+      <li><span data-l="ar">دعم الفنانين الشباب.</span><span data-l="en">Supporting young artists.</span></li>
+      <li><span data-l="ar">تطوير الحركة المسرحية المستقلة.</span><span data-l="en">Developing the independent theatre movement.</span></li>
+      <li><span data-l="ar">تشجيع التجريب المسرحي.</span><span data-l="en">Encouraging theatrical experimentation.</span></li>
+      <li><span data-l="ar">خلق جسور ثقافية بين مصر وفرنسا.</span><span data-l="en">Building cultural bridges between Egypt and France.</span></li>
+      <li><span data-l="ar">تقديم المسرح كوسيلة للتعليم والحوار المجتمعي.</span><span data-l="en">Presenting theatre as a tool for education and community dialogue.</span></li>
+    </ul>
+  </div></section>
+
+  <section class="achievements" id="achievements"><div class="wrap reveal">
+    <h2><span data-l="ar">إنجازاتنا</span><span data-l="en">Our achievements</span></h2>
+    <p class="lead"><span data-l="ar">منذ تأسيسه، ساهم الاستوديو في:</span><span data-l="en">Since its founding, the studio has:</span></p>
+    <div class="timeline">
+      <div class="ev"><div class="yr">2022</div><h3><span data-l="ar">إطلاق الدورة الأولى من مهرجان بيراندلو للمسرح</span><span data-l="en">Launched the first edition of the Pirandello Theatre Festival</span></h3></div>
+      <div class="ev"><div class="yr">2023</div><h3><span data-l="ar">تنظيم الدورة الثانية من المهرجان</span><span data-l="en">Organized the second edition of the festival</span></h3></div>
+    </div>
+    <div class="grid">
+      <div><span data-l="ar">إنتاج العديد من العروض المسرحية والمشاركة فيها.</span><span data-l="en">Produced and taken part in many theatre shows.</span></div>
+      <div><span data-l="ar">التعاون مع مهرجانات شبابية ومستقلة.</span><span data-l="en">Collaborated with youth and independent festivals.</span></div>
+      <div><span data-l="ar">المساهمة في فعاليات ومهرجانات مسرحية داخل الإسكندرية.</span><span data-l="en">Contributed to theatre events and festivals across Alexandria.</span></div>
+      <div><span data-l="ar">التعاون مع عدد من المؤسسات والفرق المسرحية.</span><span data-l="en">Worked with a number of institutions and theatre companies.</span></div>
+      <div><span data-l="ar">دعم المواهب الشابة في الإخراج والتمثيل والإنتاج المسرحي.</span><span data-l="en">Supported young talent in directing, acting and theatre production.</span></div>
+      <div><span data-l="ar">المشاركة في تنظيم فعاليات فنية وثقافية متنوعة.</span><span data-l="en">Helped organize a range of artistic and cultural events.</span></div>
+    </div>
+  </div></section>
+
+  <!-- لما الصور توصل: بدّل كل <div class="ph">...</div> بـ <div class="ph"><img src="اسم-الصورة.jpg" alt=""></div> -->
+  <section class="gallery" id="shows"><div class="wrap reveal">
+    <h2><span data-l="ar">لقطات من العروض</span><span data-l="en">Moments from our shows</span></h2>
+    <div class="photos shows">
+      <div class="pic big"><img src="images/show-1.jpg" alt="" loading="lazy"></div>
+      <div class="pic"><img src="images/show-2.jpg" alt="" loading="lazy"></div>
+      <div class="pic"><img src="images/show-3.jpg" alt="" loading="lazy"></div>
+      <div class="pic"><img src="images/show-4.jpg" alt="" loading="lazy"></div>
+      <div class="pic"><img src="images/show-5.jpg" alt="" loading="lazy"></div>
+      <div class="pic"><img src="images/show-6.jpg" alt="" loading="lazy"></div>
+      <div class="pic"><img src="images/show-7.jpg" alt="" loading="lazy"></div>
+      <div class="pic"><img src="images/show-8.jpg" alt="" loading="lazy"></div>
+      <div class="pic"><img src="images/show-9.jpg" alt="" loading="lazy"></div>
+    </div>
+  </div></section>
+
+  <section class="gallery alt" id="awards"><div class="wrap reveal">
+    <h2><span data-l="ar">الشهادات والجوائز</span><span data-l="en">Certificates &amp; awards</span></h2>
+    <div class="awardpics">
+      <div class="pic"><img src="images/award-1.jpg" alt="" loading="lazy"></div>
+      <div class="pic"><img src="images/award-2.jpg" alt="" loading="lazy"></div>
+    </div>
+    <h3 class="sub-h"><span data-l="ar">الشهادات</span><span data-l="en">Certificates</span></h3>
+    <div class="photos cert">
+      <div class="ph"><span data-l="ar">الصورة قريبًا</span><span data-l="en">Photo coming soon</span></div>
+      <div class="ph"><span data-l="ar">الصورة قريبًا</span><span data-l="en">Photo coming soon</span></div>
+      <div class="ph"><span data-l="ar">الصورة قريبًا</span><span data-l="en">Photo coming soon</span></div>
+      <div class="ph"><span data-l="ar">الصورة قريبًا</span><span data-l="en">Photo coming soon</span></div>
+    </div>
+  </div></section>
+</main>
+
+<footer>
+  <span data-l="ar">© استوديو بيراندلو · تصميم وتطوير وكالة <a href="https://web-prime0.vercel.app/" target="_blank" rel="noopener">web.prime</a></span>
+  <span data-l="en">© Pirandello Studio · Designed &amp; developed by <a href="https://web-prime0.vercel.app/" target="_blank" rel="noopener">web.prime</a> agency</span>
+</footer>
+
+<div id="lb"><img alt=""></div>
+<script>
+  window.addEventListener('load',()=>setTimeout(()=>document.body.classList.add('open'),300));
+  const hero=document.querySelector('.hero'),spot=document.getElementById('spot');
+  hero.addEventListener('pointermove',e=>{const r=hero.getBoundingClientRect();spot.style.setProperty('--x',(e.clientX-r.left)+'px');spot.style.setProperty('--y',(e.clientY-r.top)+'px')});
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+  const lb=document.getElementById('lb'),lbi=lb.querySelector('img');
+  document.querySelectorAll('.pic').forEach(p=>p.addEventListener('click',()=>{lbi.src=p.querySelector('img').src;lb.classList.add('on')}));
+  lb.addEventListener('click',()=>lb.classList.remove('on'));
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')lb.classList.remove('on')});
+  // Language toggle (same Arabic/English switch as the main site)
+  const html=document.documentElement,btn=document.getElementById('lang');
+  btn.addEventListener('click',()=>{
+    const en=html.lang==='ar';
+    html.lang=en?'en':'ar';html.dir=en?'ltr':'rtl';
+    btn.textContent=en?'عربي':'EN';
+  });
+</script>
+</body>
+</html>
